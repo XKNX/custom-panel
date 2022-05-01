@@ -33,16 +33,9 @@ repos:
           - --force
           - --keep-updates
         files: ^(xknx_custom_panel)/.+\.py$
-  # Frontend
+  # Frontend TODO: Move to package json
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v2.6.2
     hooks:
       - id: prettier
         files: src/.
-  - repo: https://github.com/awebdeveloper/pre-commit-tslint
-    rev: v0.0.2
-    hooks:
-      - id: tslint
-        args:
-          - --fix
-        additional_dependencies: [ 'tslint@5.0.0' ]

@@ -7,11 +7,6 @@ KNX UI exists of 2 components right now:
 * KNX panel: a GUI to show different KNX related interfaces
 * KNX custom integration: a custom component for HA that implements the neccessary websocket commands and also registers the custom panel with HA
 
-```yaml
-# Example configuration.yaml entry
-knx_panel:
-```
-
 ## Features
 
 * Get an overview of your current KNX installation state (shows if connected to the Bus, which XKNX version is running and the currently assigned Individual address)
@@ -28,4 +23,9 @@ Please install the pre-commit hook by using:
 
 Start the frontend with:
 
-    cd frontend && nvm use && npm install && npm run start
+    nvm use && npm install && ng build --watch
+
+To test this with Home Assistant you need to set an appropriate `PYTHONPATH` to your local installation.
+In order to achieve this run:
+
+    export PYTHONPATH="/path/to/your/local/custom-panel" && python -m homeassistant -c /path/to/your/config
